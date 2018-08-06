@@ -29,7 +29,7 @@ def apply_coupons(cart, coupons)
       if item_name == coupon_obj[:item] && (cart[item_name][:count] == coupon_obj[:num] || cart[item_name][:count] > coupon_obj[:num])
         couponName = "#{item_name.upcase} W/COUPON"
         binding.pry
-        new_cart[couponName] = {:price => coupon_obj[:cost], :clearance => true, :count => 1}
+        new_cart[couponName] = {:price => coupon_obj[:cost], :clearance => cart[item_name][:clearance], :count => 1}
         new_cart[item_name][:count] -= coupon_obj[:num]
         #trying to deal with multiple coupons
         while new_cart[item_name][:count] >= coupon_obj[:num]
