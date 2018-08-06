@@ -53,7 +53,7 @@ def apply_clearance(cart)
   cart
 end
 
-def checkout()
+def checkout(cart:[], coupons:[])
   consolidate_cart(cart:[])
   binding.pry
 end
