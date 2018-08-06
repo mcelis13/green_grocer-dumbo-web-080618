@@ -27,6 +27,7 @@ def apply_coupons(cart, coupons)
     new_cart[item_name] = item_data
     coupons.each do |coupon_obj|
       if item_name == coupon_obj[:item]
+        binding.pry
         couponName = "#{item_name.upcase} W/COUPON"
         new_cart[couponName] = {:price => coupon_obj[:cost], :clearance => true, :count => 1}
         new_cart[item_name][:count] -= coupon_obj[:num]
